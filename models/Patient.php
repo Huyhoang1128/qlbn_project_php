@@ -39,7 +39,7 @@ class Patient{
     }
     public function delete()
     {
-        return $this->db->delete('patients','id',$_GET['id']);
+        return $this->db->deletePatient('patients','id',$_GET['id']);
     }
     //Method
     // public function __construct($id, $fullName, $gender){
