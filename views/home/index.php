@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +12,7 @@
 <body>
     <div class="container">
         <h3 class="text-center text-uppercase text-success mt-3 mb-3">Hospital Management</h3>
-        <a href="<?= DOMAIN.'/app/views/patient/add.php';?>" class="btn btn-success">Add patient</a>
+        <a class="create" href="index.php?page=home&action=create">Add patient</a>
 
         <table class="table">
             <thead>
@@ -58,5 +55,3 @@
 
 
 </body>
-
-</html>
