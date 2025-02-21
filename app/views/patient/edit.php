@@ -33,17 +33,21 @@
     <form action="#" method="GET">
         <div class="mb-3">
             <label for="id" class="form-label">ID</label>
-            <input type="text" class="form-control" name="id" value="<?php echo $row['id'];?>">
+            <input type="text" class="form-control" name="id" value="<?php echo $row['id'];?>" readonly>
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>">
         </div>
         <div class="mb-3">
-            <label for="gender" class="form-label">Gender</label>
-            <input type="text" class="form-control" name="gender" value="<?php echo $row['gender'];?>">
+            <select class="form-control" id="gender" name="gender" required>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <!-- <label for="gender" class="form-label">Gender</label> -->
+            <!-- <input type="text" class="form-control" name="gender" value="<?php echo $row['gender'];?>"> -->
         </div>
-            <input type="submit" name="btn_submit" value="Edit">
+            <input type="submit" class="btn btn-success" name="btn_submit" value="Edit">
     </form>
     <?php 
         if(isset($_GET['btn_submit'])){
@@ -59,7 +63,7 @@
     <a
         class="text-center text-success mt-3"
         href="<?=  DOMAIN. 'public/?controller=patient&action=update&id=' . $patient->getId().'&name='.$patient->getFullName().'&gender='.$patient->getGender() ?> ">Confirm?</a>
-
+    
     <?php
         }
     ?>

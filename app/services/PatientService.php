@@ -6,27 +6,26 @@
 
     class PatientService{
 
-        public function getAllPatients(){
-            $patients = [];
-            $dbConnection = new DBConnection();
+      public function getAllPatients(){
+          $patients = [];
+          $dbConnection = new DBConnection();
 
-            if ($dbConnection != null){
-                $conn = $dbConnection->getConnection();
-                if($conn != null){
-                    $sql = "SELECT * FROM patients";
-                    $stmt = $conn->query($sql);
+          if ($dbConnection != null){
+              $conn = $dbConnection->getConnection();
+              if($conn != null){
+                  $sql = "SELECT * FROM patients";
+                  $stmt = $conn->query($sql);
 
-                    while ($row = $stmt->fetch()){
-                        $patient = new Patient($row['id'], $row['name'], $row['gender']);
-                        $patients[] = $patient;
-                    }
+                  while ($row = $stmt->fetch()){
+                      $patient = new Patient($row['id'], $row['name'], $row['gender']);
+                      $patients[] = $patient;
+                  }
 
-                    
-                    return $patients;
-                }
-            }
-        }
-    public function createPatient($name, $gender) {
+                  return $patients;
+              }
+          }
+      }
+      public function createPatient($name, $gender) {
         $dbConnection = new DBConnection();
 
         if ($dbConnection != null) {
@@ -45,52 +44,52 @@
             }
         }
         return null; 
-    }
+      }
 
     
-    public function updatePatient($id, $name, $gender) {
-    $dbConnection = new DBConnection();
+      public function updatePatient($id, $name, $gender) {
+        $dbConnection = new DBConnection();
 
-    if ($dbConnection != null) {
-      $conn = $dbConnection->getConnection();
-      if ($conn != null) {
-        $sql = "UPDATE patients SET name = :name, gender = :gender WHERE id = :id";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(":id", $id);
-        $stmt->bindParam(":name", $name); 
-        $stmt->bindParam(":gender", $gender); 
+        if ($dbConnection != null) {
+          $conn = $dbConnection->getConnection();
+          if ($conn != null) {
+            $sql = "UPDATE patients SET name = :name, gender = :gender WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":name", $name); 
+            $stmt->bindParam(":gender", $gender); 
 
-        if ($stmt->execute()) {
-          return true; 
-        } else {
-            return false;
+            if ($stmt->execute()) {
+              return true; 
+            } else {
+                return false;
+            }
+          }
         }
+
+        return false; 
       }
-    }
 
-    return false; 
-  }
+      public function deletePatient($id) {
+        $dbConnection = new DBConnection();
 
-  public function deletePatient($id) {
-    $dbConnection = new DBConnection();
+        if ($dbConnection != null) {
+          $conn = $dbConnection->getConnection();
+          if ($conn != null) {
+            $sql = "DELETE FROM patients WHERE id = :id";
+            $id=(int)$id;
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id', $id);
 
-    if ($dbConnection != null) {
-      $conn = $dbConnection->getConnection();
-      if ($conn != null) {
-        $sql = "DELETE FROM patients WHERE id = :id";
-        $id=(int)$id;
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id', $id);
-
-        if ($stmt->execute()) {
-          return true; 
-        } else {
-          return false;
+            if ($stmt->execute()) {
+              return true; 
+            } else {
+              return false;
+            }
+          }
         }
-      }
-    }
 
-    return false; 
+        return false; 
+      }
   }
-}
 ?>

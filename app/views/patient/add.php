@@ -34,7 +34,7 @@
                 <option>Female</option>
             </select>
         </div>
-        <input type="submit" name="btn_submit">
+        <input type="submit" class="btn btn-success" name="btn_submit">
     </form>
     <?php 
         if(isset($_GET['btn_submit'])){
@@ -47,7 +47,11 @@
             $patientController->create($name,$gender);
             if($patientController){
                 echo "<script>alert('Success!');</script>";
-                //header('Location: ?controller=home');
+                // "<script>
+                // setTimeout(function(){
+                // header('Location: /phpMVC/public');
+                // exit();},1000);
+                // </script>"
             }
         }
     ?>
