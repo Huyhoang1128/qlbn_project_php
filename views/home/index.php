@@ -29,17 +29,17 @@
                     foreach ($patients as $patient){
                 ?>
                 <tr>
-                    <th scope="row"><?=$patient->getId();?></th>
-                    <td><?=$patient->getFullName();?></td>
-                    <td><?=$patient->getGender();?></td>
+                    <td scope="row"><?php echo $patient['id']?></td>
+                    <td><?php echo $patient['name']?></td>
+                    <td><?php echo $patient['gender']?></td>
                     <td>
                         <!-- <a href="">Edit</a> -->
-                        <a href="<?= DOMAIN.'/app/views/patient/edit.php?id='.$patient->getId()?>">
+                        <a href="index.php?page=Patient$action=edit&item=<?php echo $patient['id']?>">Edit</a>
                             <i class="bi bi-pencil-square"></i>
                     </td>
                     <td>
                         <!-- <a href="">Delete</a> -->
-                        <a href="<?= DOMAIN.'/app/views/patient/delete.php?id='.$patient->getId()?>">
+                        <a href="index.php?page=Patient$action=delete&item=<?php echo $patient['id']?>">Edit</a>
                             <i class="bi bi-trash-fill"></i>
                     </td>
                 </tr>
