@@ -29,7 +29,7 @@ class DB
 
         return mysqli_fetch_all($query, MYSQLI_ASSOC);
     }
-    public function createPatients($table, $data)
+    public function createPatient($table, $data)
     {
         $sql = "INSERT INTO $table";
         $sql.= "(".implode(",",array_keys($data)).') ';
@@ -37,7 +37,7 @@ class DB
         
         return mysqli_query($this->conn, $sql);
     }
-    public function update($table, $data=[], $id, $value)
+    public function updatePatient($table, $data=[], $id, $value)
     {
         $sql = "";
         foreach ($data as $key=>$values){
@@ -47,7 +47,7 @@ class DB
 
         mysqli_query($this->conn, $sql);
     }
-    public function delete($table, $id, $value)
+    public function deletePatient($table, $id, $value)
     {
         $sql= "DELETE FROM $table WHERE $id = $value";
         sqli_query($this->conn, $sql);
