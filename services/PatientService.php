@@ -1,14 +1,14 @@
-<?php
+<!-- <?php
 
     require_once APP_ROOT.'/app/models/Patient.php';
-    require_once APP_ROOT.'/app/libs/DbConnection.php';
+    require_once APP_ROOT.'/app/config/config.php';
 
 
     class PatientService{
 
       public function getAllPatients(){
           $patients = [];
-          $dbConnection = new DBConnection();
+          $dbConnection = new DB();
 
           if ($dbConnection != null){
               $conn = $dbConnection->getConnection();
@@ -26,7 +26,7 @@
           }
       }
       public function createPatient($name, $gender) {
-        $dbConnection = new DBConnection();
+        $dbConnection = new DB();
 
         if ($dbConnection != null) {
             $conn = $dbConnection->getConnection();
@@ -48,7 +48,7 @@
 
     
       public function updatePatient($id, $name, $gender) {
-        $dbConnection = new DBConnection();
+        $dbConnection = new DB();
 
         if ($dbConnection != null) {
           $conn = $dbConnection->getConnection();
@@ -71,7 +71,7 @@
       }
 
       public function deletePatient($id) {
-        $dbConnection = new DBConnection();
+        $dbConnection = new DB();
 
         if ($dbConnection != null) {
           $conn = $dbConnection->getConnection();
@@ -92,4 +92,4 @@
         return false; 
       }
   }
-?>
+?> -->

@@ -1,7 +1,8 @@
 <?php
-    require_once APP_ROOT.'/app/services/PatientService.php';
-
-    class HomeController{
+    require 'BaseController.php';
+    require 'models/Patient.php';
+    class HomeController extends BaseController
+    {
         public function index(){
             //Goi DL Benh nhan
             $patientService = new PatientService();
