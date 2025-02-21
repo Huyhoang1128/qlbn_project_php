@@ -1,4 +1,7 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +10,10 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-</head>
-
+</head> -->
+<?php
+    addHead("Patient Management");
+?>
 <body>
     <div class="container">
         <h3 class="text-center text-uppercase text-success mt-3 mb-3">Hospital Management</h3>
@@ -55,3 +60,4 @@
 
 
 </body>
+</html>
