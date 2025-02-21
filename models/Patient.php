@@ -1,9 +1,9 @@
 <?php
 
 class Patient{
-    private $id;
-    private $fullName;
-    private $gender;
+    // private $id;
+    // private $fullName;
+    // private $gender;
 
     public $db;
     
@@ -17,7 +17,29 @@ class Patient{
     }
     public function create()
     {
-        
+        $name = $_POST['name'];
+        $gender = $_POST['gender'];
+        $data = [
+            'name' =>$name,
+            'gender' =>$gender,
+        ];
+        $this->db->createPatient('patients',$data);
+        header("location: index.php?page=Patient");
+    }
+    public function update()
+    {
+        $name = $_POST['name'];
+        $gender = $_POST['gender'];
+        $data =[
+            'name' => $name,
+            'gender'=>$gender
+        ];
+        $this->db->updatePatient('patients',$data,'id',$_GET['id']);
+        header("location: index.php?page=Patient");
+    }
+    public function delete()
+    {
+        return $this->db->delete('patients','id',$_GET['id']);
     }
     //Method
     // public function __construct($id, $fullName, $gender){
