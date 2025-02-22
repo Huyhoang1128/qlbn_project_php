@@ -50,6 +50,6 @@ class DB
     public function deletePatient($table, $id, $value)
     {
         $sql= "DELETE FROM $table WHERE $id = $value";
-        sqli_query($this->conn, $sql);
+        mysqli_query($this->conn, $sql);
     }
 }
