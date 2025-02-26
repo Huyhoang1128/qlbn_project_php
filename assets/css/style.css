@@ -6,3 +6,7 @@ button{
     margin-top:10px;
     width: 100%;
 }
+meta {
+    width: device-width;
+    initial-value: 1.0;
+}

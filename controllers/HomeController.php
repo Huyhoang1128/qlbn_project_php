@@ -15,7 +15,7 @@
             $data = ['posts' => $this->posts->show()];
             return $this->view('index',data);
         }
-        
+
     }
 
 ?>
