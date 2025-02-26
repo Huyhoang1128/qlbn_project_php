@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 class Patient{
     // private $id;
     // private $fullName;
@@ -11,6 +12,10 @@ class Patient{
     {
         $this->db = new DB;
     }
+=======
+class Patient extends Base{
+
+>>>>>>> 18a0232 (comment-fix commit)
     public function show()
     {
         return $this->db->get('patients');
@@ -23,10 +28,17 @@ class Patient{
             'name' =>$name,
             'gender' =>$gender,
         ];
+<<<<<<< HEAD
         $this->db->createPatient('patients',$data);
         header("location: index.php?page=Patient");
     }
     public function update()
+=======
+        $this->db->insert('patients',$data);
+        header("location: index.php?page=Patient");
+    }
+    public function edit()
+>>>>>>> 18a0232 (comment-fix commit)
     {
         $name = $_POST['name'];
         $gender = $_POST['gender'];
@@ -34,6 +46,7 @@ class Patient{
             'name' => $name,
             'gender'=>$gender
         ];
+<<<<<<< HEAD
         $this->db->updatePatient('patients',$data,'id',$_GET['id']);
         header("location: index.php?page=Patient");
     }
@@ -63,6 +76,15 @@ class Patient{
     // public function setFullName($fullName){
     //     $this->fullName = $fullName;
     // }
+=======
+        $this->db->update('patients',$data,'id',$_GET['id']);
+        header("location: index.php?page=Patient");
+    }
+    public function del()
+    {
+        return $this->db->delete('patients','id',$_GET['id']);
+    }
+>>>>>>> 18a0232 (comment-fix commit)
     
 }
 

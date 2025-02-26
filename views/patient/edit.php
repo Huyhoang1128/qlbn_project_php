@@ -45,7 +45,10 @@
             $gender=$_GET['gender'];
             
             require('../../config/config.php');
+<<<<<<< HEAD
             // echo APP_ROOT;
+=======
+>>>>>>> 18a0232 (comment-fix commit)
             require_once APP_ROOT.'/app/controllers/PatientController.php';
             $patient=new Patient($id,$name,$gender);
     ?>

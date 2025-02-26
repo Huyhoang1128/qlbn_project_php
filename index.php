@@ -13,6 +13,7 @@
         $action='index';
     }
     require "route.php";
+<<<<<<< HEAD
     // $controller = isset($_GET['controller'])?$_GET['controller']:'home';
     // $action = isset($_GET['action'])?$_GET['action']:'index';
 
@@ -41,5 +42,7 @@
     // }else {
     //     echo 'Nothing';
     // }
+=======
+>>>>>>> 18a0232 (comment-fix commit)
 
 ?>
