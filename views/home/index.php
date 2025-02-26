@@ -9,10 +9,6 @@
     <script src="assets/js/script.js"></script>
 
 </head>
-<<<<<<< HEAD
-=======
-
->>>>>>> 18a0232 (comment-fix commit)
 <body>
     <div class="container">
         <h3 class="text-center text-uppercase text-success mt-3 mb-3">Hospital Management</h3>
@@ -37,18 +33,10 @@
                     <td><?php echo $patient['name']?></td>
                     <td><?php echo $patient['gender']?></td>
                     <td>
-<<<<<<< HEAD
-                        <!-- <a href="">Edit</a> -->
-=======
->>>>>>> 18a0232 (comment-fix commit)
                         <a href="index.php?page=Patient$action=edit&item=<?php echo $patient['id']?>">Edit</a>
                             <i class="bi bi-pencil-square"></i>
                     </td>
                     <td>
-<<<<<<< HEAD
-                        <!-- <a href="">Delete</a> -->
-=======
->>>>>>> 18a0232 (comment-fix commit)
                         <a href="index.php?page=Patient$action=delete&item=<?php echo $patient['id']?>">Edit</a>
                             <i class="bi bi-trash-fill"></i>
                     </td>

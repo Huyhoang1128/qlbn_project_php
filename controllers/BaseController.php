@@ -17,11 +17,8 @@ class BaseController
             header("location: index.php?action=error");
         }
     }
-<<<<<<< HEAD
-=======
     public function error()
         {
             return $this->view('error');
         }
->>>>>>> 18a0232 (comment-fix commit)
 }

@@ -11,8 +11,5 @@ class Home
     {
        return $this->db->get('patients');
     }
-<<<<<<< HEAD
-=======
     
->>>>>>> 18a0232 (comment-fix commit)
 }

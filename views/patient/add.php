@@ -29,7 +29,7 @@
             $name=$_GET['name'];
             $gender=$_GET['gender'];
             
-            require('../../config/config.php');
+            require('../../config/connection.php');
             require_once APP_ROOT.'/app/controllers/PatientController.php';
             $patientController = new PatientController();
             $patientController->create($name,$gender);
