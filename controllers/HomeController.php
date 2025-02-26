@@ -3,7 +3,7 @@
     require 'models/Patient.php';
     class HomeController extends BaseController
     {
-        public $posts;
+        protected $posts;
 
         public function __construct()
         {
