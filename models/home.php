@@ -1,11 +1,6 @@
 <?php
-class Home
+class Home extends Base
 {
-    public $db;
-    public function __construct()
-    {
-        $this->db = new DB;
-    }
 
     public function show()
     {
