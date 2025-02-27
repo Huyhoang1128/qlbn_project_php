@@ -13,7 +13,7 @@
         public function index()
         {
             $data = ['posts' => $this->posts->show()];
-            return $this->view('index',data);
+            return $this->view('index',$data);
         }
 
     }
