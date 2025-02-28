@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<head>
-    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=edge" name="viewport">
-    <title>Edit</title>
+<?php 
+    include 'config/connection.php';
+    include 'header.php';  
+?>
+    <h2>Edit Patient</h2>
     <script src="assets/js/script.js"></script>
-</head>
 
-<body>
     <?php
         if(isset($_REQUEST['id'])){
             $conn=mysqli_connect("localhost","root","","qlbn");
@@ -17,7 +13,7 @@
             
         }
     ?>
-    <form action="#" method="GET">
+    <form action="#" method="POST">
         <div class="mb-3">
             <label for="id" class="form-label">ID</label>
             <input type="text" class="form-control" name="id" value="<?php echo $row['id'];?>" readonly>
@@ -37,10 +33,10 @@
             <input type="submit" class="btn btn-success" name="btn_submit" value="Edit">
     </form>
     <?php 
-        if(isset($_GET['btn_submit'])){
-            $id=$_GET['id'];
-            $name=$_GET['name'];
-            $gender=$_GET['gender'];
+        if(isset($_POST['btn_submit'])){
+            $id=$_POST['id'];
+            $name=$_POST['name'];
+            $gender=$_POST['gender'];
             
             require('../../config/connection.php');
             require_once APP_ROOT.'/app/controllers/PatientController.php';
@@ -53,5 +49,3 @@
     <?php
         }
     ?>
-</body>
-</html>

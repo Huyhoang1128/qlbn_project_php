@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=edge" name="viewport">
-    <title>Add patient</title>
+<?php 
+    include 'config/connection.php';
+    include 'header.php';  
+?>
+    <h2>Add patient</h2>
     <script src="assets/js/script.js"></script>
-</head>
-
-<body>
-    <form action="#" method="GET">
+    <form action="#" method="POST">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
@@ -23,9 +19,9 @@
         <input type="submit" class="btn btn-success" name="btn_submit">
     </form>
     <?php 
-        if(isset($_GET['btn_submit'])){
-            $name=$_GET['name'];
-            $gender=$_GET['gender'];
+        if(isset($_POST['btn_submit'])){
+            $name=$_POST['name'];
+            $gender=$_POST['gender'];
             
             require('../../config/connection.php');
             require_once APP_ROOT.'/app/controllers/PatientController.php';
@@ -41,6 +37,3 @@
             }
         }
     ?>
-</body>
-
-</html>
