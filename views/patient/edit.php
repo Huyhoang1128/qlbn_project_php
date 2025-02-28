@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+    include 'config/connection.php';
+    include 'header.php';  
+?>
+    <h2>Edit Patient</h2>
+    <script src="assets/js/script.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        form{
-            width: 30%;
-            margin: auto;
-        }
-        button{
-            margin-top:10px;
-            width: 100%;
-        }
-    </style>
-</head>
-
-<body>
     <?php
         if(isset($_REQUEST['id'])){
             $conn=mysqli_connect("localhost","root","","qlbn");
@@ -30,7 +13,7 @@
             
         }
     ?>
-    <form action="#" method="GET">
+    <form action="#" method="POST">
         <div class="mb-3">
             <label for="id" class="form-label">ID</label>
             <input type="text" class="form-control" name="id" value="<?php echo $row['id'];?>" readonly>
@@ -50,13 +33,12 @@
             <input type="submit" class="btn btn-success" name="btn_submit" value="Edit">
     </form>
     <?php 
-        if(isset($_GET['btn_submit'])){
-            $id=$_GET['id'];
-            $name=$_GET['name'];
-            $gender=$_GET['gender'];
+        if(isset($_POST['btn_submit'])){
+            $id=$_POST['id'];
+            $name=$_POST['name'];
+            $gender=$_POST['gender'];
             
-            require('../../config/config.php');
-            // echo APP_ROOT;
+            require('../../config/connection.php');
             require_once APP_ROOT.'/app/controllers/PatientController.php';
             $patient=new Patient($id,$name,$gender);
     ?>
@@ -67,9 +49,3 @@
     <?php
         }
     ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>

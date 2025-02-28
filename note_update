@@ -1,0 +1,4 @@
+define routing, define function
+define layout --> view import layout
+base controller --> others controller extends base model
+header function 
